@@ -40,4 +40,65 @@ $(document).ready(function () {
             })
         })
     })
+
+
+    $('#search-cr').click(function (event) {            //filter op name?
+        event.preventDefault();
+        let filtercr = $('#filter-cr').val();
+        $.ajax({
+            url: "handler.php",
+            cache: false,
+            dataType: "json",
+            method: "POST",
+            data: {
+                filtercr: filtercr,
+            }
+        }).done(function (result) {
+            // console.log(result);
+            $('#filter-result').empty();
+            $.each(result, function (key, val) {
+                console.log(val);
+                let name = val.name;
+                let cr = val.cr;
+                let size = val.size;
+                let ac = val.ac;
+                let hp = val.hp;
+                let speed = val.speed;
+                let vision = val.vision;
+                let str = val.str;
+                let dex = val.dex;
+                let con = val.con;
+                let breathing = val.breathing;
+                let attack = val.attack;
+                let combatskills = val.combatskills;
+                let generalskills = val.generalskills;
+                let stealth = val.stealth;
+                let perception = val.perception;
+
+
+                $('#filter-result').append(
+                    '<div class="card mb-1" style="max-width: 30rem";>' +
+                    '<div class="card-body">' +
+                    '<h4 class="card-title">' + name + '</h4>' +
+                    '<h6 class="card-subtitle mb-2 text-muted">' + "A CR " + cr + ", " + size + " Beast" + '</h6>' +
+                    '<p class="card-text" style="max-height: 15rem; overflow-y: scroll";>' +
+                    '<b>' + "AC: " + '</b>' + ac + '<br>' +
+                    '<b>' + "HP: " + '</b>' + hp + '<br>' +
+                    '<b>' + "Speed: " + '</b>' + speed + '<br>' +
+                    '<b>' + "Senses: " + '</b>' + "Darkvision: " + vision + '<br>' +
+                    "Perception: " + perception + '<br>' +
+                    '<b>' + "Breathing: " + '</b>' + breathing + '<br>' +
+                    stealth + " stealth" + '<br><br>' +
+                    '<b>' + "STR: " + '</b>' + str + '<br>' +
+                    '<b>' + "DEX: " + '</b>' + dex + '<br>' +
+                    '<b>' + "CON: " + '</b>' + con + '<br><br>' +
+                    '<b>' + "Attack: " + '</b>' + attack + '<br>' +
+                    '<b>' + "Combat Skills: " + '</b>' + combatskills + '<br>' +
+                    '<b>' + "General Skills: " + '</b>' + generalskills + '<br>' +
+                    '</p></div>' +
+                    '</div>&nbsp;&nbsp;'
+                )
+            })
+        })
+    })
 });
