@@ -14,50 +14,32 @@
     <div class="row">&nbsp;</div>
     <div class="row">&nbsp;</div>
     <div class="row">&nbsp;</div>
-    <h1>What level beast are you looking for?</h1>
+    <h1>What beast are you looking for?</h1>
     <div class="row">
-        <div class="col-2">
-            <input class="form-control form-control-sm" id="filter-cr" type="text"
-                   placeholder="filter on Combat Rating"
-                   aria-label=".form-control-sm example">
+        <div class="col-8">
+            <input class="form-control form-control-lg" id="search-text" type="text"
+                   aria-label=".form-control-lg example">
         </div>
-        <div class="col-2">
-            <button type="button" class="btn btn-primary btn-sm" id="search-cr">&nbsp;<b>Go</b>&nbsp;</button>
+        <div class="col-4">
+            <div class="input-group">
+                <select name="type" class="form-select" id="filteroption" aria-label="filterselection">
+                    <option value="cr">Combat Rating</option>
+                    <option value="name">Name</option>
+                    <option value="size">Size</option>
+                    <option value="ac">Armor Class</option>
+                </select>
+                <button class="btn btn-primary" id="searchbutton" type="button" value="Submit">Search</button>
+            </div>
         </div>
     </div>
-    <!--        <div class="col-2">-->
-    <!--            <input class="form-control form-control-sm" id="filter-name" type="text"-->
-    <!--                   placeholder="filter on Name"-->
-    <!--                   aria-label=".form-control-sm example">-->
-    <!--        </div>-->
-    <!--        <div class="col-1">-->
-    <!--            <button type="button" class="btn btn-primary btn-sm" id="search-name">Go</button>-->
-    <!--        </div>-->
-    <!--        <div class="col-2">-->
-    <!--            <input class="form-control form-control-sm" id="filter-size" type="text"-->
-    <!--                   placeholder="filter on Size"-->
-    <!--                   aria-label=".form-control-sm example">-->
-    <!--        </div>-->
-    <!--        <div class="col-1">-->
-    <!--            <button type="button" class="btn btn-primary btn-sm" id="search-size">Go</button>-->
-    <!--        </div>-->
-    <!--        <div class="col-2">-->
-    <!--            <input class="form-control form-control-sm" id="filter-ac" type="text"-->
-    <!--                   placeholder="filter on AC"-->
-    <!--                   aria-label=".form-control-sm example">-->
-    <!--        </div>-->
-    <!--        <div class="col-1">-->
-    <!--            <button type="button" class="btn btn-primary btn-sm" id="search-ac">Go</button>-->
-    <!--        </div>-->
-</div>
-</div>
-<div class="row">&nbsp;</div>
-<div class="row justify-content-center" id="filter-result"></div>
+    <div class="row">&nbsp;</div>
+    <div class="row justify-content-center" id="filter-result"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="javatest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="javascript.js"></script>
+</div>
 </body>
 </html>

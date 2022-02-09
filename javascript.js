@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('#search-btn').click(function (event) {
         event.preventDefault();
         let search = $('#search-text').val();
@@ -42,22 +43,26 @@ $(document).ready(function () {
     })
 
 
-    $('#search-cr').click(function (event) {            //filter op name?
+    $('#searchbutton').click(function (event) {
         event.preventDefault();
-        let filtercr = $('#filter-cr').val();
+        let filtersearch = $("#search-text").val();
+        let filtertype = $("#filteroption").val();
+        // console.log(type);
+        // console.log(search);
         $.ajax({
             url: "handler.php",
             cache: false,
             dataType: "json",
             method: "POST",
             data: {
-                filtercr: filtercr,
+                filtersearch: filtersearch,
+                filtertype: filtertype,
             }
         }).done(function (result) {
             // console.log(result);
             $('#filter-result').empty();
             $.each(result, function (key, val) {
-                console.log(val);
+                // console.log(val);
                 let name = val.name;
                 let cr = val.cr;
                 let size = val.size;
@@ -75,9 +80,8 @@ $(document).ready(function () {
                 let stealth = val.stealth;
                 let perception = val.perception;
 
-
                 $('#filter-result').append(
-                    '<div class="card mb-1" style="max-width: 30rem";>' +
+                    '<div class="card mb-1" style="max-width: 25rem";>' +
                     '<div class="card-body">' +
                     '<h4 class="card-title">' + name + '</h4>' +
                     '<h6 class="card-subtitle mb-2 text-muted">' + "A CR " + cr + ", " + size + " Beast" + '</h6>' +
